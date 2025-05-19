@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UserComponent  implements OnInit {
 
-  @Input({ required: true}) user!: {
+  @Input({ required: true}) userInfo!: {
     id: string,
     name: string,
     avatar: string
@@ -16,7 +16,7 @@ export class UserComponent  implements OnInit {
   constructor() { }
 
   get imagePath() {
-    return 'assets/users/' + this.user.avatar;
+    return 'assets/users/' + this.userInfo.avatar;
   }
 
   ngOnInit() {}
