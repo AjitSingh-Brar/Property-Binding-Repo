@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      EASY TASK
+      Contact List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,12 +14,9 @@
   </ion-header>
 
   <main id="container">
-    <ul id="users">
+    <ul id="users" *ngFor="let user of users">
       <li>
-        <app-user [avatar] = "users[0].avatar" [name] = "users[0].name"></app-user>
-      </li>
-       <li>
-        <app-user  [avatar] = "users[1].avatar" [name] = "users[1].name"></app-user>
+        <app-user [user]="user"></app-user>
       </li>
     </ul>
   </main>

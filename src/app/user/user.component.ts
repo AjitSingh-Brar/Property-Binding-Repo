@@ -1,9 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { SAMPLE_USERS } from '../sample-users';
-
-const randomIndex = Math.floor(Math.random() * SAMPLE_USERS.length)
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,13 +7,16 @@ const randomIndex = Math.floor(Math.random() * SAMPLE_USERS.length)
 })
 export class UserComponent  implements OnInit {
 
-  @Input() avatar!: string;
-  @Input() name!: string;
+  @Input({ required: true}) user!: {
+    id: string,
+    name: string,
+    avatar: string
+  };
 
   constructor() { }
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   ngOnInit() {}
