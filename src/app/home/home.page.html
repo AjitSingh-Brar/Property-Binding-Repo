@@ -14,8 +14,8 @@
   </ion-header>
 
   <main id="container">
-    <ul id="users" *ngFor="let user of users">
-      <li>
+    <ul id="users">
+      <li *ngFor= "let user of users">
         <app-user [user]="user"></app-user>
       </li>
     </ul>
